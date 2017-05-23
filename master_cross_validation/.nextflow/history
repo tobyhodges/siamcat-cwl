@@ -1,0 +1,15 @@
+2017-02-22 10:42:44	54.7s	loving_minsky	OK	ab1b25dd0f293034a8a00375cdb2200f	14d2fedd-38b3-45f2-b142-dd1bc7fa0e7b	nextflow run master_cross_validation.nf --tag B
+2017-02-22 10:54:37	-	angry_jennings	-	ab1b25dd0f293034a8a00375cdb2200f	4c186cde-28a7-4554-8993-5cf8032f0b02	nextflow run master_cross_validation.nf
+2017-02-22 10:55:50	46.3s	happy_wescoff	OK	ab1b25dd0f293034a8a00375cdb2200f	e0726ec5-0d10-44d7-af28-e702dd9191b9	nextflow run master_cross_validation.nf
+2017-02-22 11:03:14	47.1s	silly_almeida	OK	ab1b25dd0f293034a8a00375cdb2200f	06938618-34f9-4df0-8974-5e6120087db1	nextflow run master_cross_validation.nf
+2017-03-05 16:48:17	3.1s	lonely_varahamihira	OK	ab1b25dd0f293034a8a00375cdb2200f	7a22de4e-5e00-4d8c-aeab-555b03d37fe1	nextflow run master_cross_validation.nf
+2017-03-05 16:49:25	5s	angry_ritchie	ERR	ab1b25dd0f293034a8a00375cdb2200f	38091a61-59fd-4faf-8590-5383de781766	nextflow run master_cross_validation.nf --tag FR-CRC_N114_specIclusters
+2017-03-05 16:51:01	52.1s	zen_brahmagupta	OK	ab1b25dd0f293034a8a00375cdb2200f	99bb0b26-acc0-483b-a1ab-5998e2cb05fc	nextflow run master_cross_validation.nf --tag teststudy
+2017-03-05 20:47:02	24.4s	clever_bhabha	ERR	ab1b25dd0f293034a8a00375cdb2200f	4420e035-acdf-422c-b124-84e319ebffb7	nextflow run master_cross_validation.nf --tag teststudy
+2017-03-05 20:58:13	44.6s	big_kilby	OK	ab1b25dd0f293034a8a00375cdb2200f	f2010f13-1014-478d-9162-51295443a742	nextflow run master_cross_validation.nf --tag teststudy
+2017-03-05 21:11:14	44.7s	silly_bardeen	OK	ab1b25dd0f293034a8a00375cdb2200f	93134210-fb2b-459f-8d0e-61ef134529c9	nextflow run master_cross_validation.nf --tag crc
+2017-03-05 21:13:16	45.1s	ecstatic_mahavira	OK	ab1b25dd0f293034a8a00375cdb2200f	d74aaf23-b2f7-49d4-9965-fc30acb4df39	nextflow run master_cross_validation.nf --tag teststudy
+2017-03-05 21:19:57	45.4s	berserk_cray	OK	ab1b25dd0f293034a8a00375cdb2200f	8cbac8c3-8c15-4a34-9bed-4bea98806b9a	nextflow run master_cross_validation.nf --tag crc
+2017-03-05 21:21:13	44.6s	stupefied_aryabhata	OK	ab1b25dd0f293034a8a00375cdb2200f	ef82546a-d36f-484f-8382-6c36930818e0	nextflow run master_cross_validation.nf --tag teststudy
+2017-03-18 16:34:43	44.3s	peaceful_poitras	OK	ab1b25dd0f293034a8a00375cdb2200f	03645fba-0bbd-4b9f-92e2-6898ad1a28f4	nextflow run master_cross_validation.nf --tag A
+2017-03-18 16:36:28	44.7s	sharp_austin	OK	ab1b25dd0f293034a8a00375cdb2200f	eb8eacc6-d44a-44af-aea5-870a9cd93bec	nextflow run master_cross_validation.nf --tag B

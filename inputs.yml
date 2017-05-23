@@ -1,0 +1,11 @@
+validator: data_validator.r
+sourcedir: '/mnt/c/Users/Alex/Documents/EMBL/Toil/siamcat-nextflow-snakemake/srcdir'
+feat_in: 
+  class: File
+  path: 'inputdir/feat_B.tsv'
+label_in: 
+  class: File
+  path: 'inputdir/label_B.tsv'
+metadata_in: 
+  class: File
+  path: 'inputdir/nummeta_B.tsv'

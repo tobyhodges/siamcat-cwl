@@ -1,0 +1,85 @@
+WHY NEXTFLOW?
+sooper easy to write DAGs
+out-of-the-box Docker support
+    -> already created a dockerfile to create docker images for siamcat, we could consider creaeting a full EMBL Docker image
+basically copy-paste for our existing pipelines
+easy to set up/portable
+native support for all SGE engines (eg SLURM on our new clusters)
+it's not the awfulness that is snakemake
+runs on AWS cloud services
+OpenSource! Developers are bioinformaticians from CGR in barcelona
+literally groovy!
+
+Processes are executed independently and are isolated from each other i.e. they do not share a common (writable) state. The only way they can communicate is by using asynchronous FIFO queues, called channels in the Nextflow lingo.
+
+Any process can define one or more channels as input and output. The interaction between these processes, and ultimately the pipeline execution flow itself, is implicitly defined by these input and output declarations.
+
+Dependencies also regulated by I/O channels, neither inputs nor outputs can therefore be shared between processes
+
+Every process is sandboxed and gets his own workdir
+
+
+Amazon cloud:
+required in config:
+scope "cloud":
+cloud {
+    imageId = 'ami-43f49030'    //use image privided by nextflow devs? -> not in eu-central-1
+    instanceType = 'm4.xlarge'
+    subnetId = 'subnet-05222a43'
+}
+
+scope "aws":
+aws {
+    accessKey = '<YOUR S3 ACCESS KEY>'
+    secretKey = '<YOUR S3 SECRET KEY>'
+    region = '<REGION IDENTIFIER>' // eu-west-1/EU (Ireland), eu-central-1/EU (Frankfurt), eu-west-2/EU (London) only eu-west-1 has the preconfigured nextflow AMI
+
+    client {
+        maxConnections = 20
+        connectionTimeout = 10000
+        additional params...
+    }
+}
+
+When prompted for a key pair, select Choose an existing key pair, then select the key pair that you created when getting set up.
+
+Alternatively, you can create a new key pair.
+Select Create a new key pair, enter a name for the key pair, and then choose Download Key Pair.
+This is the only chance for you to save the private key file, so be sure to download it.
+Save the private key file in a safe place.
+You'll need to provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance.
+
+env vars:
+
+env.ALPHA = 'some value'
+env.BETA = "$HOME/some/path"
+
+env {
+     DELTA = 'one more'
+     GAMMA = "/my/path:$PATH"
+}
+
+SOOPER DOOPER COOL:
+PROFILES!!!
+
+nextflow run pipe.nf -profile <PROFILENAME>
+
+profiles {
+
+    standard {
+        process.executor = 'local'
+    }
+
+    cluster {
+        process.executor = 'sge'
+        process.queue = 'long'
+        process.memory = '10GB'
+    }
+
+    cloud {
+        process.executor = 'cirrus'
+        process.container = 'cbcrg/imagex'
+        docker.enabled = true
+    }
+
+}
