@@ -7,31 +7,31 @@ inputs:
   validator:
     type: string
     inputBinding: 
-      valueFrom: $(inputs.sourcedir)/$(self)
+      valueFrom: $(inputs.srcdir)/$(self)
       position: 1
-  sourcedir:
+  srcdir:
     type: string
     inputBinding:
-      valueFrom: --scrdir=$(self)
       position: 2
       separate: false
+      prefix: --scrdir=
   feat_in: 
-    type: File
+    type: string
     inputBinding:
-      valueFrom: --feat_in="$(self.basename)" --feat_out="vld_$(self.basename)"
+      valueFrom: --feat_in=$(self)
       position: 3
   label_in:
-    type: File
+    type: string
     inputBinding:
-      valueFrom: --label_in="$(self.basename)" --label_out="vld_$(self.basename)"
+      valueFrom: --label_in=$(self) --label_out=vld_$(self)
       position: 4
   metadata_in:
-    type: File?
+    type: string?
     inputBinding:
-      valueFrom: --metadata_in="$(self.basename)" --metadata_out="vld_$(self.basename)"
+      valueFrom: --metadata_in=$(self) --metadata_out=vld_$(self)
       position: 5
 outputs:
   feat_out: 
     type: File
     outputBinding:
-      glob: vld_$(inputs.metadata_in.basename)
+      glob: vld_$(inputs.metadata_in)
