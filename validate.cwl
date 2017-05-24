@@ -12,26 +12,47 @@ inputs:
   srcdir:
     type: string
     inputBinding:
+      prefix: --scrdir=
       position: 2
       separate: false
-      prefix: --scrdir=
   feat_in: 
-    type: string
+    type: File
     inputBinding:
-      valueFrom: --feat_in=$(self)
+      prefix: --feat_in=
       position: 3
+      separate: false
   label_in:
+    type: File
+    inputBinding:
+      prefix: --label_in=
+      position: 4
+      separate: false
+  metadata_in:
+    type: File?
+    inputBinding:
+      prefix: --metadata_in=
+      position: 5
+      separate: false
+  feat_out:
     type: string
     inputBinding:
-      valueFrom: --label_in=$(self) --label_out=vld_$(self)
-      position: 4
-  metadata_in:
+      prefix: --feat_out=
+      position: 6
+      separate: false
+  label_out:
+    type: string
+    inputBinding:
+      prefix: --label_out=
+      position: 7
+      separate: false
+  metadata_out:
     type: string?
     inputBinding:
-      valueFrom: --metadata_in=$(self) --metadata_out=vld_$(self)
-      position: 5
+      prefix: --metadata_out=
+      position: 8
+      separate: false
 outputs:
-  feat_out: 
+  feat_out_file: 
     type: File
     outputBinding:
       glob: vld_$(inputs.metadata_in)

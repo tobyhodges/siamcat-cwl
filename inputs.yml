@@ -1,13 +1,13 @@
 validator: data_validator.r
-srcdir: /mnt/d/Users/Alex/Documents/EMBL/Siamcat-Toil/srcdir
+srcdir: srcdir
 feat_in: 
   class: File
   path: inputdir/feat_B.tsv
-feat_out: vld_feat_B.tsv
+feat_out: work/vld_feat_B.tsv
 label_in: 
   class: File
   path: inputdir/label_B.tsv
-label_out: vld_label_B.tsv
+label_out: work/vld_label_B.tsv
 metadata_in: 
   class: File
   path: inputdir/nummeta_B.tsv
