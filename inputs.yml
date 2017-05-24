@@ -1,6 +1,9 @@
 srcdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/srcdir
 workdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/workdir
+
 validator: data_validator.r
+filter: generic_filter.r
+
 feat_in: 
   class: File
   path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/feat_B.tsv
@@ -10,3 +13,8 @@ label_in:
 metadata_in:
   class: File
   path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/nummeta_B.tsv
+
+filt_method: abundance
+cutoff: 1e-3
+rm_unmapped: 'true'
+recomp_prop: 'false'
