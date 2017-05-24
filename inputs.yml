@@ -1,14 +1,12 @@
+srcdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/srcdir
+workdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/workdir
 validator: data_validator.r
-srcdir: srcdir
 feat_in: 
   class: File
-  path: inputdir/feat_B.tsv
-feat_out: work/vld_feat_B.tsv
+  path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/feat_B.tsv
 label_in: 
   class: File
-  path: inputdir/label_B.tsv
-label_out: work/vld_label_B.tsv
-metadata_in: 
+  path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/label_B.tsv
+metadata_in:
   class: File
-  path: inputdir/nummeta_B.tsv
-metadata_out: work/vld_nummeta_B.tsv
+  path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/nummeta_B.tsv

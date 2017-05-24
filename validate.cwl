@@ -3,6 +3,7 @@ class: CommandLineTool
 baseCommand: Rscript
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 inputs: 
   validator:
     type: string
@@ -12,47 +13,51 @@ inputs:
   srcdir:
     type: string
     inputBinding:
-      prefix: --scrdir=
+      prefix: --srcdir
       position: 2
-      separate: false
+      shellQuote: false
   feat_in: 
     type: File
     inputBinding:
-      prefix: --feat_in=
+      valueFrom: --feat_in $(self.path) --feat_out vld_$(self.basename)
       position: 3
-      separate: false
-  label_in:
+      shellQuote: false
+  label_in: 
     type: File
     inputBinding:
-      prefix: --label_in=
+      valueFrom: --label_in $(self.path) --label_out vld_$(self.basename)
       position: 4
-      separate: false
+      shellQuote: false
   metadata_in:
     type: File?
     inputBinding:
-      prefix: --metadata_in=
+      valueFrom: |
+                  ${
+                    if (inputs.metadata_in){
+                      return "--metadata_in "+self.path+" --metadata_out vld_"+self.basename;
+                    } else  {
+                      return false;
+                    }
+                  }
       position: 5
-      separate: false
-  feat_out:
-    type: string
-    inputBinding:
-      prefix: --feat_out=
-      position: 6
-      separate: false
-  label_out:
-    type: string
-    inputBinding:
-      prefix: --label_out=
-      position: 7
-      separate: false
-  metadata_out:
-    type: string?
-    inputBinding:
-      prefix: --metadata_out=
-      position: 8
-      separate: false
+      shellQuote: false
 outputs:
-  feat_out_file: 
+  feat_out: 
     type: File
     outputBinding:
-      glob: vld_$(inputs.metadata_in)
+      glob: vld_$(inputs.feat_in.basename)
+  label_out: 
+    type: File
+    outputBinding:
+      glob: vld_$(inputs.label_in.basename)
+  metadata_out: 
+    type: File?
+    outputBinding:
+      glob: | 
+        ${
+          if(inputs.metadata_in){
+            return "vld_"+inputs.metadata_in.basename;
+          } else {
+            return false; 
+          }
+        }
