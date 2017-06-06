@@ -1,8 +1,14 @@
 srcdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/srcdir
-workdir: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/workdir
 
 validator: data_validator.r
 filter: generic_filter.r
+assocchecker: association_check.r
+normalizer: generic_normalizer.r
+splitter: data_splitter.r
+builder: trainer.r
+predictor: predictor.r
+assessor: model_evaler.r
+interpretor: model_interpretor.r
 
 feat_in: 
   class: File
@@ -14,7 +20,49 @@ metadata_in:
   class: File
   path: /mnt/c/Users/Alex/Documents/EMBL/Toil/Siamcat-Toil/inputdir/nummeta_B.tsv
 
+col_scheme: RdYlBu
+
 filt_method: abundance
 cutoff: 1e-3
-rm_unmapped: 'true'
-recomp_prop: 'false'
+rm_unmapped: true
+recomp_prop: false
+
+assoc_plot: Assoc_plots.pdf
+mult_test: FDR
+alpha: 0.05
+min_fc: 1
+detect_limit: 1e-6
+plot_type: quantile.box
+
+norm_param_out: normalization_parameters.txt
+norm_method: log.std
+log_n0: 1e-8
+sd_min_quantile: 0.1
+norm_sample: false
+norm_global: false
+vector_norm: 2
+
+train_sets: train_sets.tsv
+test_sets: test_sets.tsv
+num_folds_cv: 5
+resample_cv: 1
+stratify_cv: true
+inseparable_cv: none
+
+LMMETHOD: lasso
+trained_model: trained_lasso_models.tsv
+num_folds_ms: 5
+stratify_ms: true
+ms_criterion: auroc
+min_nonzero_coeff: 5
+
+prediction: lasso_predictions.tsv
+
+eval_plots: eval_plots.pdf
+
+heatmap_type: fc
+consens_threshold: 0.5
+plot_metadata: true
+
+model_plots: model_plots.pdf
+

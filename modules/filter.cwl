@@ -26,14 +26,14 @@ inputs:
       prefix: --cutoff
       shellQuote: false
   rm_unmapped:
-    type: string
+    type: boolean
     inputBinding:
-      prefix: --rm_unmapped
+      prefix: --rm_unmapped true
       shellQuote: false
   recomp_prop:
-    type: string
+    type: boolean
     inputBinding:
-      prefix: --recomp_prop
+      prefix: --recomp_prop true
       shellQuote: false
 
 outputs:
