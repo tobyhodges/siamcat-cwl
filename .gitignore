@@ -1,2 +1,4 @@
 /work
 /outputdir
+assoc_plots.pdf eval_plots.pdf model_plots.pdf
+normalization_parameters.txt

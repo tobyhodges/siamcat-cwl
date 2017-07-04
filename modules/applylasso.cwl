@@ -3,41 +3,43 @@ class: CommandLineTool
 baseCommand: Rscript
 requirements:
   - class: InlineJavascriptRequirement
-  - class: ShellCommandRequirement
 
-inputs: 
-  predictor:
-    type: string
-    inputBinding: 
-      valueFrom: $(inputs.srcdir)/$(inputs.LMMETHOD)_$(self)
-      position: -1
+inputs:
   srcdir:
     type: string
     inputBinding:
       prefix: --srcdir
+      position: 2
   feat_in:
     type: File
     inputBinding:
       prefix: --feat_in
-  label_in: 
+      position: 2
+  label_in:
     type: File
     inputBinding:
       prefix: --label_in
+      position: 2
   trained_model:
     type: File
     inputBinding:
       prefix: --model
+      position: 2
   test_sets:
     type: File
     inputBinding:
       prefix: --test_sets
-  prediction:
-    type: string
-    inputBinding:
+      position: 2
+
+arguments:
+    - position: 0
+      valueFrom: $(inputs.srcdir)/lasso_predictor.r
+    - position: 2
       prefix: --pred
+      valueFrom: lasso_predictions.tsv
 
 outputs:
-  pred_out:
+  predictions_out:
     type: File
     outputBinding:
-      glob: $(inputs.prediction)
+      glob: lasso_predictions.tsv

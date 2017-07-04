@@ -3,61 +3,57 @@ class: CommandLineTool
 baseCommand: Rscript
 requirements:
   - class: InlineJavascriptRequirement
-  - class: ShellCommandRequirement
-inputs: 
-  validator:
-    type: string
-    inputBinding: 
-      valueFrom: $(inputs.srcdir)/$(self)
-      position: 1
+
+inputs:
   srcdir:
     type: string
     inputBinding:
       prefix: --srcdir
       position: 2
-      shellQuote: false
-  feat_in: 
+  feat_in:
     type: File
     inputBinding:
-      valueFrom: --feat_in $(self.path) --feat_out vld_$(self.basename)
-      position: 3
-      shellQuote: false
-  label_in: 
+      prefix: --feat_in
+      position: 2
+  label_in:
     type: File
     inputBinding:
-      valueFrom: --label_in $(self.path) --label_out vld_$(self.basename)
-      position: 4
-      shellQuote: false
+      prefix: --label_in
+      position: 2
   metadata_in:
     type: File?
     inputBinding:
-      valueFrom: |
-                  ${
-                    if (inputs.metadata_in){
-                      return "--metadata_in "+self.path+" --metadata_out vld_"+self.basename;
-                    } else  {
-                      return false;
-                    }
+      position: 2
+      prefix: --metadata_in
+arguments:
+  - position: 0
+    valueFrom: $(inputs.srcdir)/data_validator.r
+  - prefix: --feat_out
+    position: 2
+    valueFrom: vld_$(inputs.feat_in.basename)
+  - prefix: --label_out
+    position: 2
+    valueFrom: vld_$(inputs.label_in.basename)
+  - valueFrom: |
+                ${
+                  if (inputs.metadata_in){
+                    return [ "--metadata_out", "vld_metadata.tsv" ];
+                  } else {
+                    return null;
                   }
-      position: 5
-      shellQuote: false
+                }
+    position: 2
+
 outputs:
-  feat_out: 
+  validated_feat:
     type: File
     outputBinding:
       glob: vld_$(inputs.feat_in.basename)
-  label_out: 
+  validated_label:
     type: File
     outputBinding:
       glob: vld_$(inputs.label_in.basename)
-  metadata_out: 
+  validated_metadata:
     type: File?
     outputBinding:
-      glob: | 
-        ${
-          if(inputs.metadata_in){
-            return "vld_"+inputs.metadata_in.basename;
-          } else {
-            return false; 
-          }
-        }
+      glob: vld_metadata.tsv

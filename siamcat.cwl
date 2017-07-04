@@ -3,31 +3,23 @@ class: Workflow
 
 requirements:
   - class: InlineJavascriptRequirement
-  - class: ShellCommandRequirement
 
 inputs:
-  validator: string
-  filter: string
-  assocchecker: string
-  normalizer: string
-  splitter: string
-  builder: string
-  predictor: string
-  assessor: string
-  interpretor: string
-
+# TODO: remove this
   srcdir: string
 
+# Workflow input files
   feat_in: File
   label_in: File
   metadata_in: File?
 
+# Filtering
   filt_method: string
   rm_unmapped: boolean
   recomp_prop: boolean
   cutoff: float
-  
-  assoc_plot: string
+
+# Association
   mult_test: string
   alpha: float
   min_fc: float
@@ -35,112 +27,103 @@ inputs:
   col_scheme: string
   plot_type: string
 
-  norm_param_out: string
+# Normalization
   norm_method: string
   log_n0: float
   sd_min_quantile: float
   norm_sample: boolean
   norm_global: boolean
-  vector_norm: float
+  vector_norm: int
 
-  train_sets: string
-  test_sets: string
-  num_folds_cv: float
-  resample_cv: float
+# Data splitting
+  num_folds_cv: int
+  resample_cv: int
   stratify_cv: boolean
   inseparable_cv: string
 
-  LMMETHOD: string
-  trained_model: string
-  num_folds_ms: float
+# Model building
+  num_folds_ms: int
   stratify_ms: boolean
   ms_criterion: string
-  min_nonzero_coeff: float
+  min_nonzero_coeff: int
 
-  prediction: string
+# Model prediction
 
-  eval_plots: string
+# Model evaluation
 
+# Model interpretation
   heatmap_type: string
   consens_threshold: float
   plot_metadata: boolean
 
-  model_plots: string
-
 outputs:
-  assoc_plots_out:
+  association_plots_out:
     type: File
-    outputSource: CHECKASSOC/assoc_plots
-  eval_plots_out:
+    outputSource: CHECKASSOC/association_plots_out
+  evaluation_plots_out:
     type: File
-    outputSource: EVAL/eval_plots_out
+    outputSource: EVALUATE/evaluation_plots_out
   model_plots_out:
     type: File
     outputSource: INTERPRET/model_plots_out
+  normalization_parameters_out:
+    type: File
+    outputSource: NORMALIZE/normalization_parameters_out
 
 steps:
   VALIDATE:
     run: modules/validate.cwl
-    in: 
+    in:
       srcdir: srcdir
-      validator: validator
       feat_in: feat_in
       label_in: label_in
       metadata_in: metadata_in
-    out: [feat_out, label_out, metadata_out]
+    out: [validated_feat, validated_label, validated_metadata]
 
   FILTER:
     run: modules/filter.cwl
-    in: 
+    in:
       srcdir: srcdir
-      filter: filter
-      feat_in: VALIDATE/feat_out
+      feat_in: VALIDATE/validated_feat
       filt_method: filt_method
       cutoff: cutoff
       rm_unmapped: rm_unmapped
       recomp_prop: recomp_prop
-    out: [feat_out]
+    out: [filtered_feat]
 
   CHECKASSOC:
     run: modules/checkassoc.cwl
-    in: 
-      assocchecker: assocchecker
+    in:
       srcdir: srcdir
-      feat_in: FILTER/feat_out
-      label_in: VALIDATE/label_out
-      assoc_plot: assoc_plot
+      feat_in: FILTER/filtered_feat
+      label_in: VALIDATE/validated_label
       mult_test: mult_test
       alpha: alpha
       min_fc: min_fc
       detect_limit: detect_limit
       col_scheme: col_scheme
       plot_type: plot_type
-    out: [assoc_plots]
+    out: [association_plots_out]
 
-  NORM:
-    run: modules/norm.cwl
+  NORMALIZE:
+    run: modules/normalize.cwl
     in:
-      normalizer: normalizer
       srcdir: srcdir
-      feat_in: FILTER/feat_out
-      norm_param_out: norm_param_out
+      feat_in: FILTER/filtered_feat
       norm_method: norm_method
       log_n0: log_n0
       sd_min_quantile: sd_min_quantile
       norm_sample: norm_sample
       norm_global: norm_global
       vector_norm: vector_norm
-    out: [feat_out, norm_param]
+    out: [feat_out, normalization_parameters_out]
 
   SPLIT:
     run: modules/split.cwl
     in:
-      splitter: splitter
       srcdir: srcdir
-      label_in: VALIDATE/label_out
-      metadata_in: VALIDATE/metadata_out
-      train_sets: train_sets
-      test_sets: test_sets
+      label_in: VALIDATE/validated_label
+      metadata_in: VALIDATE/validated_metadata
       num_folds_cv: num_folds_cv
       resample_cv: resample_cv
       stratify_cv: stratify_cv
@@ -150,12 +133,9 @@ steps:
   TRAINLASSO:
     run: modules/trainlasso.cwl
     in:
-      builder: builder
-      LMMETHOD: LMMETHOD
       srcdir: srcdir
-      feat_in: NORM/feat_out
-      label_in: VALIDATE/label_out
-      trained_model: trained_model
+      feat_in: NORMALIZE/feat_out
+      label_in: VALIDATE/validated_label
       train_sets: SPLIT/train_sets_out
       num_folds_ms: num_folds_ms
       stratify_ms: stratify_ms
@@ -166,38 +146,31 @@ steps:
   APPLYLASSO:
     run: modules/applylasso.cwl
     in:
-      predictor: predictor
-      LMMETHOD: LMMETHOD
       srcdir: srcdir
-      feat_in: NORM/feat_out
-      label_in: VALIDATE/label_out
+      feat_in: NORMALIZE/feat_out
+      label_in: VALIDATE/validated_label
       trained_model: TRAINLASSO/trained_model_out
       test_sets: SPLIT/test_sets_out
-      prediction: prediction
-    out: [pred_out]
+    out: [predictions_out]
 
-  EVAL:
-    run: modules/eval.cwl
+  EVALUATE:
+    run: modules/evaluate.cwl
     in:
-      assessor: assessor
       srcdir: srcdir
-      label_in: VALIDATE/label_out
-      prediction: APPLYLASSO/pred_out
-      eval_plots: eval_plots
-    out: [eval_plots_out]
+      label_in: VALIDATE/validated_label
+      prediction: APPLYLASSO/predictions_out
+    out: [evaluation_plots_out]
 
   INTERPRET:
     run: modules/interpret.cwl
     in:
-      interpretor: interpretor
       srcdir: srcdir
-      feat_in: NORM/feat_out
+      feat_in: NORMALIZE/feat_out
       origin_feat: feat_in
-      label_in: VALIDATE/label_out
-      metadata_in: VALIDATE/metadata_out
+      label_in: VALIDATE/validated_label
+      metadata_in: VALIDATE/validated_metadata
       trained_model: TRAINLASSO/trained_model_out
-      prediction: APPLYLASSO/pred_out
-      model_plots: model_plots
+      prediction: APPLYLASSO/predictions_out
       col_scheme: col_scheme
       heatmap_type: heatmap_type
       consens_threshold: consens_threshold

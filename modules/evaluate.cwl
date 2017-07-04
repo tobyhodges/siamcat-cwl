@@ -4,31 +4,32 @@ baseCommand: Rscript
 requirements:
   - class: InlineJavascriptRequirement
 
-inputs: 
-  assessor:
-    type: string
-    inputBinding: 
-      valueFrom: $(inputs.srcdir)/$(self)
-      position: -1
+inputs:
   srcdir:
     type: string
     inputBinding:
       prefix: --srcdir
-  label_in: 
+      position: 2
+  label_in:
     type: File
     inputBinding:
       prefix: --label
+      position: 2
   prediction:
     type: File
     inputBinding:
       prefix: --pred
-  eval_plots:
-    type: string
-    inputBinding:
-      prefix: --plot
+      position: 2
+
+arguments:
+  - position: 0
+    valueFrom: $(inputs.srcdir)/model_evaler.r
+  - position: 2
+    prefix: --plot
+    valueFrom:   eval_plots.pdf
 
 outputs:
-  eval_plots_out:
+  evaluation_plots_out:
     type: File
     outputBinding:
-      glob: $(inputs.eval_plots)
+      glob: eval_plots.pdf

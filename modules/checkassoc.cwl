@@ -3,63 +3,63 @@ class: CommandLineTool
 baseCommand: Rscript
 requirements:
   - class: InlineJavascriptRequirement
-  - class: ShellCommandRequirement
 
-inputs: 
-  assocchecker:
-    type: string
-    inputBinding: 
-      position: -1
-      valueFrom: $(inputs.srcdir)/$(self)
+inputs:
   srcdir:
     type: string
     inputBinding:
+      position: 2
       prefix: --srcdir
-      shellQuote: false
-  feat_in: 
+  feat_in:
     type: File
     inputBinding:
+      position: 2
       prefix: --feat_in
-      shellQuote: false
-  label_in: 
+  label_in:
     type: File
     inputBinding:
+      position: 2
       prefix: --label_in
-      shellQuote: false
-  assoc_plot:
-    type: string
-    inputBinding:
-      prefix: --plot
   mult_test:
     type: string
     inputBinding:
+      position: 2
       prefix: --mult_test
   alpha:
     type: float
     inputBinding:
+      position: 2
       prefix: --alpha
-      shellQuote: false
   min_fc:
     type: float
     inputBinding:
+      position: 2
       prefix: --min_fc
-      shellQuote: false
   detect_limit:
     type: float
     inputBinding:
+      position: 2
       prefix: --min_fc
-      shellQuote: false
   col_scheme:
     type: string
     inputBinding:
+      position: 2
       prefix: --col_scheme
   plot_type:
     type: string
     inputBinding:
+      position: 2
       prefix: --plot_type
 
+arguments:
+  - position: 0
+    valueFrom: $(inputs.srcdir)/association_check.r
+  - position: 2
+    prefix: --plot
+    valueFrom: assoc_plots.pdf
+
 outputs:
-  assoc_plots: 
+  association_plots_out:
     type: File
     outputBinding:
-      glob: $(inputs.assoc_plot)
+      glob: assoc_plots.pdf
