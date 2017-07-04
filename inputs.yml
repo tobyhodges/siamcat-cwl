@@ -1,0 +1,58 @@
+# TODO: remove this
+srcdir: /Users/hodges/Documents/Workflows/cwl/Siamcat-Toil/srcdir
+
+# Workflow input files
+feat_in:
+  class: File
+  path: /Users/hodges/Documents/Workflows/cwl/Siamcat-Toil/inputdir/feat_B.tsv
+label_in:
+  class: File
+  path: /Users/hodges/Documents/Workflows/cwl/Siamcat-Toil/inputdir/label_B.tsv
+metadata_in:
+  class: File
+  path: /Users/hodges/Documents/Workflows/cwl/Siamcat-Toil/inputdir/nummeta_B.tsv
+
+# Global workflow parameter
+col_scheme: RdYlBu
+
+# Filtering
+filt_method: abundance
+cutoff: 1e-3
+rm_unmapped: true
+recomp_prop: false
+
+# Association
+mult_test: FDR
+alpha: 0.05
+min_fc: 1
+detect_limit: 1e-6
+plot_type: quantile.box
+
+# Normalization
+norm_method: log.std
+log_n0: 1e-8
+sd_min_quantile: 0.1
+norm_sample: false
+norm_global: false
+vector_norm: 2
+
+# Data splitting
+num_folds_cv: 5
+resample_cv: 1
+stratify_cv: true
+inseparable_cv: none
+
+# Model building
+num_folds_ms: 5
+stratify_ms: true
+ms_criterion: auroc
+min_nonzero_coeff: 5
+
+# Model prediction
+
+# Model evaluation
+
+# Model interpretation
+heatmap_type: fc
+consens_threshold: 0.5
+plot_metadata: true

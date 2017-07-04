@@ -1,0 +1,142 @@
+age	gender	bmi	diagnosis	localization	crc_stage	fobt	wif_test
+CCIS27304052ST-3-0	52	F	20	Normal	NA	NA	Negative	Negative
+CCIS15794887ST-4-0	37	F	18	Normal	NA	NA	Negative	Negative
+CCIS74726977ST-3-0	66	M	24	Small adenoma	LC/RC	NA	Negative	NA
+CCIS16561622ST-4-0	54	M	26	Normal	NA	NA	Negative	Negative
+CCIS79210440ST-3-0	65	M	30	Normal	NA	NA	Positive	Negative
+CCIS82507866ST-3-0	57	M	24	Normal	NA	NA	Negative	Negative
+CCIS98482370ST-3-0	53	F	30	Normal	NA	NA	Negative	Negative
+CCIS00281083ST-3-0	53	M	32	Normal	NA	NA	Negative	Negative
+CCIS32452666ST-4-0	68	M	26	Normal	NA	NA	Negative	Negative
+CCIS94417875ST-3-0	59	F	25	Normal	NA	NA	Negative	Negative
+CCIS51667829ST-4-0	63	M	26	Small adenoma	RC	NA	Negative	Negative
+CCIS27927933ST-4-0	72	M	24	Normal	NA	NA	Negative	Negative
+CCIS45571137ST-3-0	55	F	20	Normal	NA	NA	Negative	Negative
+CCIS81139242ST-4-0	64	F	20	Normal	NA	NA	Negative	Negative
+CCIS21126322ST-4-0	59	M	25	Normal	NA	NA	Negative	Negative
+CCIS17669415ST-4-0	72	F	37	Cancer	LC	I	Negative	Positive
+CCIS44676181ST-4-0	48	F	21	Small adenoma	Rectum	NA	Negative	Negative
+CCIS29210128ST-4-0	64	M	27	Normal	NA	NA	Negative	Negative
+CCIS48725289ST-4-0	62	F	21	Cancer	Sigma	I	Positive	Negative
+CCIS64785924ST-20-0	59	F	25	Normal	NA	NA	Negative	Negative
+CCIS03473770ST-4-0	29	M	24	Normal	NA	NA	Negative	Negative
+CCIS10706551ST-3-0	25	M	24	Normal	NA	NA	Negative	Negative
+CCIS64773582ST-4-0	63	F	23	Normal	NA	NA	Negative	Negative
+CCIS06260551ST-3-0	58	M	24	Cancer	LC	IV	Negative	Positive
+CCIS40244499ST-3-0	87	F	32	Cancer	RC	II	Negative	Negative
+CCIS85214191ST-3-0	63	M	22	Cancer	RC	IV	Positive	Positive
+CCIS08668806ST-3-0	63	M	26	Small adenoma	LC	NA	Negative	Negative
+CCIS50369211ST-20-0	53	F	33	Small adenoma	RC	NA	Negative	Negative
+CCIS87167916ST-4-0	79	M	30	Cancer	Rectum	IV	Positive	Negative
+CCIS94496512ST-4-0	64	M	28	Small adenoma	Rectum	NA	Negative	Negative
+CCIS58234805ST-4-0	70	F	26	Cancer	LC	III	Positive	Positive
+CCIS91228662ST-4-0	63	M	31	Cancer	LC	I	Negative	Positive
+CCIS71301801ST-4-0	50	F	24	Cancer	Rectum	I	Positive	Positive
+CCIS24898163ST-4-0	59	M	31	Small adenoma	Rectum	NA	Negative	Negative
+CCIS53355328ST-4-0	76	M	NA	Cancer	LC	I	Positive	Positive
+CCIS41222843ST-4-0	73	F	24	Cancer	LC	III	Negative	Negative
+CCIS81887263ST-4-0	59	M	27	Cancer	Rectum	I	Positive	Positive
+CCIS29688262ST-20-0	50	M	25	Normal	NA	NA	Negative	Positive
+CCIS87116798ST-4-0	85	F	20	Cancer	LC	IV	Negative	Negative
+CCIS87605453ST-4-0	73	F	26	Cancer	RC	II	Positive	Negative
+CCIS83870198ST-4-0	48	F	24	Cancer	LC	I	Negative	Negative
+CCIS61287323ST-4-0	76	M	25	Cancer	Rectum	II	Positive	Negative
+CCIS11362406ST-4-0	44	F	26	Normal	NA	NA	Negative	Negative
+CCIS14449628ST-4-0	59	F	20	Cancer	RC	III	Negative	Positive
+CCIS21278152ST-4-0	63	M	25	Cancer	Sigma	II	Positive	Negative
+CCIS25399172ST-4-0	60	M	27	Small adenoma	LC	NA	Negative	Negative
+CCIS34055159ST-4-0	80	M	29	Cancer	LC	I	Positive	Positive
+CCIS76845094ST-20-0	44	M	20	Cancer	RC	IV	Positive	Negative
+CCIS41548810ST-4-0	78	M	19	Cancer	LC	IV	Positive	Negative
+CCIS98512455ST-4-0	63	M	29	Cancer	RC	IV	Negative	Negative
+CCIS83445808ST-4-0	66	M	29	Small adenoma	Sigma	NA	Negative	Negative
+CCIS37250421ST-4-0	59	F	21	Small adenoma	Rectum	NA	Positive	Negative
+CCIS35092938ST-4-0	62	F	21	Small adenoma	RC	NA	Negative	Negative
+CCIS50148151ST-4-0	87	F	15	Cancer	RC	III	Negative	Negative
+CCIS62605362ST-3-0	56	F	23	Cancer	RC	II	Positive	Negative
+CCIS87252800ST-4-0	73	M	17	Cancer	Sigma	I	Negative	Positive
+CCIS22958137ST-20-0	60	M	26	Cancer	RC	IV	Positive	Negative
+CCIS48507077ST-4-0	72	F	32	Small adenoma	Sigma	NA	Negative	Negative
+CCIS32105356ST-4-0	53	M	30	Small adenoma	LC/RC	NA	Negative	Negative
+CCIS81710917ST-20-0	49	M	20	Small adenoma	Rectum	NA	Negative	Negative
+CCIS16326685ST-4-0	46	F	29	Normal	NA	NA	Negative	Negative
+CCIS53043478ST-4-0	72	M	22	Cancer	LC	IV	Positive	Positive
+CCIS98832363ST-4-0	55	F	25	Cancer	LC	III	Positive	Negative
+CCIS02124300ST-4-0	35	M	23	Normal	NA	NA	Negative	Negative
+CCIS44743950ST-4-0	66	M	22	Small adenoma	RC	NA	Negative	Negative
+CCIS10793554ST-4-0	64	M	26	Small adenoma	RC	NA	Negative	Negative
+CCIS59132091ST-4-0	80	F	23	Cancer	LC	I	Negative	Negative
+CCIS96387239ST-4-0	66	M	20	Small adenoma	LC	NA	Negative	Negative
+CCIS82146115ST-4-0	51	M	24	Cancer	RC	IV	Negative	Negative
+CCIS31434951ST-20-0	66	M	24	Small adenoma	LC	NA	Negative	Negative
+CCIS33816588ST-4-0	64	M	21	Cancer	LC	III	Positive	Positive
+CCIS12656533ST-4-0	51	M	30	Cancer	Rectum	IV	Negative	Negative
+CCIS41806458ST-4-0	59	F	NA	Small adenoma	LC	NA	Positive	Negative
+CCIS53557295ST-4-0	45	M	24	Small adenoma	Sigma	NA	Negative	Negative
+CCIS47284573ST-4-0	67	M	25	Cancer	Rectum	III	Positive	Negative
+CCIS76563044ST-4-0	68	M	36	Small adenoma	RC	NA	Negative	Negative
+CCIS93040568ST-20-0	65	M	30	Normal	NA	NA	Negative	Negative
+CCIS45793747ST-4-0	67	M	25	Normal	NA	NA	Negative	Negative
+CCIS95097901ST-4-0	52	M	24	Normal	NA	NA	Negative	Negative
+CCIS80834637ST-4-0	60	F	28	Normal	NA	NA	Negative	Negative
+CCIS63910149ST-4-0	49	F	23	Normal	NA	NA	Negative	Negative
+CCIS84543192ST-4-0	45	F	28	Cancer	Rectum	I	Positive	Negative
+CCIS38765456ST-20-0	79	F	22	Cancer	LC	IV	Positive	Positive
+CCIS82944710ST-20-0	38	F	22	Normal	NA	NA	Negative	Negative
+CCIS55230578ST-4-0	64	M	30	Cancer	RC	IV	Negative	Negative
+CCIS24254057ST-4-0	69	F	24	Cancer	RC	IV	Negative	Negative
+CCIS78318719ST-4-0	69	F	30	Cancer	RC	II	Negative	Negative
+CCIS44757994ST-4-0	75	M	37	Cancer	LC	III	Negative	Positive
+CCIS65479369ST-4-0	69	F	25	Cancer	RC	IV	Positive	Positive
+CCIS62794166ST-4-0	68	M	23	Cancer	LC	IV	Negative	NA
+CCIS77252613ST-4-0	65	M	26	Cancer	LC	I	Positive	Positive
+CCIS11015875ST-4-0	62	M	26	Cancer	Rectum	III	Positive	Negative
+CCIS55531770ST-4-0	45	F	24	Small adenoma	Sigma	NA	Negative	Negative
+CCIS70398272ST-4-0	55	M	24	Small adenoma	RC	NA	Negative	Negative
+CCIS35100175ST-4-0	73	M	40	Cancer	LC	I	Negative	Negative
+CCIS22416007ST-4-0	82	M	24	Cancer	LC	IV	Negative	Negative
+CCIS41288781ST-4-0	74	F	19	Cancer	RC	II	Negative	Negative
+CCIS59903910ST-4-0	76	F	34	Small adenoma	RC	NA	Negative	Negative
+CCIS12370844ST-4-0	81	F	39	Cancer	Rectum	I	Positive	Positive
+CCIS72607085ST-4-0	74	F	26	Cancer	LC	IV	Negative	Negative
+CCIS46047672ST-4-0	65	M	24	Cancer	LC	IV	Negative	Positive
+CCIS22906510ST-20-0	77	M	23	Small adenoma	Sigma	NA	Positive	Negative
+CCIS52370277ST-4-0	53	M	25	Cancer	LC	IV	Negative	Positive
+CCIS02379307ST-4-0	67	M	28	Cancer	RC	I	Positive	Positive
+CCIS48579360ST-4-0	52	F	23	Small adenoma	Rectum	NA	Negative	Negative
+CCIS46467422ST-4-0	54	F	22	Cancer	RC	III	Negative	Positive
+CCIS54027808ST-4-0	52	M	33	Small adenoma	LC	NA	Positive	Negative
+CCIS15704761ST-4-0	56	F	NA	Cancer	Sigma	IV	Negative	NA
+CCIS11558985ST-4-0	56	F	NA	Normal	NA	NA	Negative	NA
+CCIS13047523ST-4-0	70	M	22	Normal	NA	NA	Negative	Negative
+CCIS94603952ST-4-0	80	F	21	Normal	NA	NA	Negative	Negative
+CCIS02856720ST-4-0	74	M	27	Normal	NA	NA	Positive	Negative
+CCIS07648107ST-4-0	62	F	21	Normal	NA	NA	Negative	Negative
+CCIS34604008ST-4-0	63	F	27	Normal	NA	NA	Negative	Negative
+CCIS63468405ST-4-0	69	F	25	Normal	NA	NA	Negative	Negative
+CCIS16383318ST-4-0	61	F	24	Normal	NA	NA	Negative	Negative
+CCIS36699628ST-4-0	68	F	25	Normal	NA	NA	Negative	Negative
+CCIS95409808ST-4-0	63	F	21	Normal	NA	NA	Negative	Negative
+CCIS74239020ST-4-0	62	M	24	Normal	NA	NA	Negative	Negative
+CCIS05314658ST-4-0	65	F	24	Normal	NA	NA	Negative	Negative
+CCIS71578391ST-4-0	70	M	25	Normal	NA	NA	Negative	Negative
+CCIS50003399ST-4-0	66	F	28	Normal	NA	NA	Negative	Negative
+CCIS36797902ST-4-0	63	M	25	Normal	NA	NA	Negative	Positive
+CCIS11354283ST-4-0	67	M	27	Normal	NA	NA	Negative	Negative
+CCIS50471204ST-4-0	61	F	23	Normal	NA	NA	Negative	Negative
+CCIS20795251ST-4-0	71	F	23	Normal	NA	NA	Negative	Negative
+CCIS07277498ST-4-0	63	M	NA	Normal	NA	NA	NA	Negative
+CCIS90164298ST-4-0	84	M	23	Normal	NA	NA	Negative	Negative
+CCIS23164343ST-4-0	62	M	23	Normal	NA	NA	Negative	Negative
+CCIS03857607ST-4-0	61	M	23	Normal	NA	NA	Negative	Negative
+CCIS63448910ST-4-0	61	F	34	Normal	NA	NA	Negative	Negative
+CCIS88007743ST-4-0	67	F	23	Normal	NA	NA	Negative	Negative
+CCIS51595129ST-4-0	63	F	22	Normal	NA	NA	Negative	Negative
+CCIS09568613ST-4-0	67	M	21	Normal	NA	NA	Negative	Negative
+CCIS07539127ST-4-0	77	F	22	Normal	NA	NA	Negative	Negative
+CCIS41692898ST-4-0	67	F	28	Normal	NA	NA	Negative	Negative
+CCIS44093303ST-4-0	62	F	20	Normal	NA	NA	Positive	Negative
+CCIS00146684ST-4-0	72	F	25	Normal	NA	NA	Negative	Negative
+CCIS78100604ST-4-0	64	F	30	Normal	NA	NA	Negative	Negative
+CCIS48174381ST-4-0	66	M	25	Normal	NA	NA	Negative	Negative
+CCIS88317640ST-4-0	74	M	27	Normal	NA	NA	Negative	Negative
